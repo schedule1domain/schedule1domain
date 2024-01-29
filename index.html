@@ -50,10 +50,20 @@
     <div class="container">
         <section>
             <h2>Your IP Address Has Been Harvested:</h2>
-            <?php
-                $visitor_ip = $_SERVER['REMOTE_ADDR'];
-                echo "Your IP address is: " . $visitor_ip;
-            ?>
+                    <p id="ip-address">Your IP address will be displayed here.</p>
+        
+            <script>
+                // Use a service to get the user's IP address
+                fetch('https://api64.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const ipAddress = data.ip;
+                        document.getElementById('ip-address').textContent = "Your IP address is: " + ipAddress;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching IP address:', error);
+                    });
+            </script>
         </section>
         
         <section class="centered-gif">
