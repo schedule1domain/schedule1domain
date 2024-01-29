@@ -48,6 +48,14 @@
     </header>
     
     <div class="container">
+        <section>
+            <h2>Your IP Address Has Been Harvested:</h2>
+            <?php
+                $visitor_ip = $_SERVER['REMOTE_ADDR'];
+                echo "Your IP address is: " . $visitor_ip;
+            ?>
+        </section>
+        
         <section class="centered-gif">
             <!-- add gif here -->
             <img src="https://i.imgur.com/jc1k4Oy.gif">
