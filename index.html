@@ -58,7 +58,7 @@
                     .then(response => response.json())
                     .then(data => {
                         const ipAddress = data.ip;
-                        document.getElementById('ip-address').textContent = "Your IP address is: " + ipAddress;
+                        document.getElementById('ip-address').textContent = ipAddress;
                     })
                     .catch(error => {
                         console.error('Error fetching IP address:', error);
